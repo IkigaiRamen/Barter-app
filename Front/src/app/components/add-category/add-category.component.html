@@ -1,0 +1,15 @@
+<form [formGroup]="categoryForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div class="error" *ngIf="categoryForm.get('name')?.hasError('required') && categoryForm.get('name')?.touched">Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div class="error" *ngIf="categoryForm.get('description')?.hasError('required') && categoryForm.get('description')?.touched">Description is required.</div>
+  </div>
+
+  <button type="submit" class="submit-button" [disabled]="categoryForm.invalid">Submit</button>
+</form>

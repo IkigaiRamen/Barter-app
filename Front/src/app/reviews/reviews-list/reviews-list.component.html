@@ -1,0 +1,32 @@
+<!-- reviews-list.component.html -->
+
+<div>
+    <h2>Reviews List</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product ID</th>
+          <th>Comments</th>
+          <th>Star Rating</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of reviews">
+          <td>{{ review.id }}</td>
+          <td>{{ review.productId }}</td>
+          <td>{{ review.comments }}</td>
+          <td>{{ review.starRating }}</td>
+          <td>{{ review.status }}</td>
+          <td>
+            <!-- Add action buttons or links as needed -->
+            <a [routerLink]="['/back/reviews', review.id, 'update']">Edit</a>
+            <button (click)="deleteReview(review.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,62 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      discovery:
+        locator:
+          # lower-case-service-id: true
+          enabled: true
+        routes:
+          - id: candidat-s
+            uri: http://localhost:8081/
+            predicates:
+              - Path=/event/**
+
+
+        - id: job-s
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/barterRequest/**
+
+
+        - id: products-s
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/products/**
+
+        - id: reviews-s
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/reviews/**
+
+        - id: annonces-s
+          uri: http://localhost:9091/
+          predicates:
+            - Path=/annonces/**
+
+        - id: categories-s
+          uri: http://localhost:9090/
+          predicates:
+            - Path=/category/**
+
+        - id: user-s
+          uri: http://localhost:5000/
+          predicates:
+              - Path=/api/v1/**
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8100/auth/realms/GatewayApi
+
+
+

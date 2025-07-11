@@ -1,0 +1,33 @@
+<div>
+    <h2>Create Product</h2>
+    <form (submit)="createProduct()">
+      <label for="productName">Product Name:</label>
+      <input [(ngModel)]="product.productName" name="productName" id="productName" required>
+  
+      <label for="weight">Weight:</label>
+      <input [(ngModel)]="product.weight" name="weight" id="weight" type="number" required>
+  
+      <label for="category">Category:</label>
+      <input [(ngModel)]="product.category" name="category" id="category" required>
+  
+      <label for="price">Price:</label>
+      <input [(ngModel)]="product.price" name="price" id="price" type="number" required>
+  
+      <label for="units">Units:</label>
+      <input [(ngModel)]="product.units" name="units" id="units" required>
+  
+      <label for="description">Description:</label>
+      <textarea [(ngModel)]="product.description" name="description" id="description" required></textarea>
+  
+      <label for="address">Address:</label>
+      <input [(ngModel)]="product.address" name="address" id="address" required>
+  
+      <label for="photo">Photo URL:</label>
+      <input [(ngModel)]="product.photo" name="photo" id="photo" required>
+  
+      <!-- You can add more fields as needed -->
+  
+      <button type="submit">Create Product</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,27 @@
+<form [formGroup]="eventForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div class="error" *ngIf="eventForm.get('name')?.hasError('required') && eventForm.get('name')?.touched">Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div class="error" *ngIf="eventForm.get('description')?.hasError('required') && eventForm.get('description')?.touched">Description is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" id="location" formControlName="location">
+    <div class="error" *ngIf="eventForm.get('location')?.hasError('required') && eventForm.get('location')?.touched">Location is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="ticketPrice">Ticket Price:</label>
+    <input type="number" id="ticketPrice" formControlName="ticketPrice">
+    <div class="error" *ngIf="eventForm.get('ticketPrice')?.hasError('min') && eventForm.get('ticketPrice')?.touched">Ticket Price cannot be negative.</div>
+  </div>
+
+  <button type="submit" class="submit-button" [disabled]="eventForm.invalid">Submit</button>
+</form>

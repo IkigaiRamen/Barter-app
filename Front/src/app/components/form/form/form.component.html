@@ -1,0 +1,40 @@
+<!-- form.component.html -->
+
+<div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+  <button mat-raised-button (click)="openCreateFormDialog()">Create Form</button>
+  <table class="table table-report -mt-2">
+    <thead>
+      <tr>
+        <th class="whitespace-nowrap">ID</th>
+        <th class="whitespace-nowrap">Title</th>
+        <th class="whitespace-nowrap">Description</th>
+        <th class="whitespace-nowrap">Image</th>
+        <th class="whitespace-nowrap">Reported</th>
+        <th class="whitespace-nowrap">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="intro-x" *ngFor="let form of forms">
+        <td>{{ form.id }}</td>
+        <td>{{ form.title }}</td>
+        <td>{{ form.description }}</td>
+        <td>{{ form.image }}</td>
+        <td>{{ form.reported }}</td>
+        <td class="table-report__action w-56">
+          <div class="flex justify-center items-center">
+              <button mat-button color="primary" (click)="openEditFormDialog(form.id)" >Edit</button> 
+            
+              <button mat-button color="secondary"  (click)="deleteForm(form.id)">Delete</button> 
+            
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Form details displayed in a pop-up dialog -->
+<mat-dialog-content>
+  <!-- Form details are displayed here -->
+</mat-dialog-content>
+

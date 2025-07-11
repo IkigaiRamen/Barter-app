@@ -1,0 +1,19 @@
+<!-- app.component.html -->
+
+<nav class="container-fluid">
+    <br/>
+    <br />
+    <div *ngIf="isAuthenticated()">
+      <p>Welcome, {{ userName }}!</p>
+      <button class="btn btn-default" (click)="logoff()">
+        Logout
+      </button>
+    </div>
+    <div *ngIf="!isAuthenticated()">
+      <button class="btn btn-default" (click)="login()">
+        Login
+      </button>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  

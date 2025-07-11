@@ -1,0 +1,15 @@
+<form [formGroup]="barterForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" id="title" formControlName="title">
+    <div class="error" *ngIf="barterForm.get('title')?.hasError('required') && barterForm.get('title')?.touched">Title is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message:</label>
+    <textarea id="message" formControlName="message"></textarea>
+    <div class="error" *ngIf="barterForm.get('message')?.hasError('required') && barterForm.get('message')?.touched">Message is required.</div>
+  </div>
+
+  <button type="submit" class="submit-button">Submit</button>
+</form>

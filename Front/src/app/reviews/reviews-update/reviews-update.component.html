@@ -1,0 +1,24 @@
+<!-- reviews-details.component.html -->
+
+<div *ngIf="review">
+    <h2>Update Review</h2>
+  
+    <form (submit)="updateReview()">
+      <label for="comments">Comments:</label>
+      <textarea [(ngModel)]="updatedReview.comments" name="comments" id="comments" required></textarea>
+  
+      <label for="starRating">Star Rating:</label>
+      <input [(ngModel)]="updatedReview.starRating" name="starRating" id="starRating" type="number" required>
+  
+      <!-- Add more fields as needed -->
+  
+      <button type="submit">Update Review</button>
+    </form>
+  
+    <!-- You can add a button to go back to the list of reviews -->
+    <button routerLink="/back/reviews">Back to Reviews</button>
+  </div>
+  
+  <!-- Display a loading message while the review details are being fetched -->
+  <div *ngIf="!review">Loading review details...</div>
+  

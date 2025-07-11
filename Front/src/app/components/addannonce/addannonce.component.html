@@ -1,0 +1,27 @@
+<form [formGroup]="annonceForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="titre">Title:</label>
+    <input type="text" id="titre" formControlName="titre">
+    <div class="error" *ngIf="annonceForm.get('titre')?.hasError('required') && annonceForm.get('titre')?.touched">Title is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div class="error" *ngIf="annonceForm.get('description')?.hasError('required') && annonceForm.get('description')?.touched">Description is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="telephone">Telephone:</label>
+    <input type="text" id="telephone" formControlName="telephone">
+  </div>
+
+  <div class="form-group">
+    <label for="echange">Echange:</label>
+    <input type="text" id="echange" formControlName="echange">
+  </div>
+
+
+
+  <button type="submit" class="submit-button" [disabled]="annonceForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,5 @@
+FROM openjdk:8
+EXPOSE 8085
+ADD target/ProductReviewsMS-0.0.1-SNAPSHOT.jar
+ProductReviewsMS-docker.jar
+ENTRYPOINT["java","-jar","ProductReviewsMS-docker.jar"]

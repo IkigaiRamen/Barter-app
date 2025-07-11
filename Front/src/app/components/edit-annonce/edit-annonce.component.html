@@ -1,0 +1,26 @@
+<form (submit)="updateAnnonce()">
+  <div class="form-group">
+    <label for="titre">Title:</label>
+    <input type="text" id="titre" name="titre" [(ngModel)]="annonce.titre" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="annonce.description" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="telephone">Telephone:</label>
+    <input type="text" id="telephone" name="telephone" [(ngModel)]="annonce.telephone">
+  </div>
+
+  <div class="form-group">
+    <label for="echange">Echange:</label>
+    <input type="text" id="echange" name="echange" [(ngModel)]="annonce.echange">
+  </div>
+
+
+
+  <button type="submit" class="submit-button">Update</button>
+</form>
+

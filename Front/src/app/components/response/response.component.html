@@ -1,0 +1,37 @@
+<div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+  <a routerLink="/back/addresponse" class="button bg-red text-white">Add Response</a>
+
+  <table class="table table-report -mt-2">
+
+    <thead>
+      <tr>
+        <th class="whitespace-nowrap"> STATUS</th>
+        <th class="text-center whitespace-nowrap">MESSAGE</th>
+        <th class="text-center whitespace-nowrap">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let request of responses">
+
+      <tr class="intro-x" >
+
+        <td>
+          <a href="" class="font-medium whitespace-nowrap">{{ request.status }}</a>
+        </td>
+        <td class="text-center">{{request.message}}</td>
+
+        <td class="table-report__action w-56">
+          <div class="flex justify-center items-center">
+            <a (click)="editResponse(request.id)" class="flex items-center mr-3">
+              <i data-lucide="pencil" class="w-4 h-4 mr-1"></i> Edit
+            </a>
+            <a class="flex items-center text-danger"  data-tw-toggle="modal"   (click)="deleteResponse(request.id)" data-tw-target="#delete-confirmation-modal">
+              <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+            </a>
+          </div>
+        </td>
+      </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

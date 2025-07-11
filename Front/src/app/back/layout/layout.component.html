@@ -1,0 +1,88 @@
+   
+   <body class="py-5 md:py-0"  style="background-color: #E2E8F0;">
+        <div class="flex justify-center items-center overflow-hidden h-screen">
+ 
+        <nav class="side-nav">
+          <ul>
+              <li>
+                  <a href="javascript:;.html" class="side-menu side-menu--active">
+                      <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
+                      <div class="side-menu__title">
+                          Dashboard
+                          <div class="side-menu__sub-icon transform rotate-180"> <i data-lucide="chevron-down"></i> </div>
+                      </div>
+                  </a>
+
+              </li>
+              <li>
+                <a  class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
+                    <div routerLink="/back/annonces" class="side-menu__title">
+                        Annonce
+                        <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+              <a  class="side-menu">
+                  <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
+                  <div routerLink="/back/categories" class="side-menu__title">
+                      Category
+                      <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                  </div>
+              </a>
+          </li>
+              <li>
+                  <a  class="side-menu">
+                      <div class="side-menu__icon"> <i data-lucide="box"></i> </div>
+                      <div routerLink="/back/barterRequests" class="side-menu__title">
+                          Barter Requests
+                          <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                <a class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
+                    <div class="side-menu__title"  routerLink="/back/responses"> Responses </div>
+                </a>
+            </li>
+              <li>
+                  <a class="side-menu">
+                      <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
+                      <div class="side-menu__title"  routerLink="/back/events"> Events </div>
+                  </a>
+              </li>
+              <li>
+                  <a  class="side-menu">
+                      <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                      <div class="side-menu__title"  routerLink="/back/venues"> Venues </div>
+                  </a>
+              </li>
+              <li>
+                <a  class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                    <div class="side-menu__title"  routerLink="/back/form"> Forms </div>
+                </a>
+            </li>
+            <li>
+                <a  class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                    <div class="side-menu__title"  routerLink="/back/products"> Products </div>
+                </a>
+            </li>
+            <li>
+                <a  class="side-menu">
+                    <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
+                    <div class="side-menu__title"  routerLink="/back/reviews"> Reviews </div>
+                </a>
+            </li>
+
+          </ul>
+      </nav>
+      <div class="content">
+     <router-outlet></router-outlet>
+    </div>
+    
+    </div>
+    </body>

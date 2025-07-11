@@ -1,0 +1,25 @@
+<!-- Add Form -->
+<form (ngSubmit)="addNewForm()" #addForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" [(ngModel)]="formData.title" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="formData.description" required></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" id="image" name="image" [(ngModel)]="formData.image">
+    </div>
+  
+    <div class="form-group">
+      <label for="reported">Reported</label>
+      <input type="checkbox" id="reported" name="reported" [(ngModel)]="formData.reported">
+    </div>
+  
+    <button type="submit">Add Form</button>
+  </form>
+  

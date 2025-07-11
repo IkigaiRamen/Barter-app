@@ -1,0 +1,17 @@
+<!-- reviews-create.component.html -->
+
+<div>
+    <h2>Create Review</h2>
+    <form (submit)="createReview()">
+      <label for="comments">Comments:</label>
+      <textarea [(ngModel)]="newReview.comments" name="comments" id="comments" required></textarea>
+  
+      <label for="starRating">Star Rating:</label>
+      <input [(ngModel)]="newReview.starRating" name="starRating" id="starRating" type="number" required>
+  
+      <!-- Add more fields as needed -->
+  
+      <button type="submit">Create Review</button>
+    </form>
+  </div>
+  

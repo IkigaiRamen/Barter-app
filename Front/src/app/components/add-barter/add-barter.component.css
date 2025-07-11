@@ -1,0 +1,21 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}

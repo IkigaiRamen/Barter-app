@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="event.name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="event.description" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" [(ngModel)]="event.location" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ticketPrice">Ticket Price:</label>
+    <input type="number" id="ticketPrice" name="ticketPrice" [(ngModel)]="event.ticketPrice" required>
+  </div>
+
+  <button type="button" (click)="updateEvent()">Update</button>
+</form>

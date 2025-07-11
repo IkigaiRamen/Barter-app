@@ -1,0 +1,42 @@
+<form [formGroup]="venueForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <div class="error" *ngIf="venueForm.get('name')?.hasError('required') && venueForm.get('name')?.touched">Name is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input type="text" id="address" formControlName="address">
+    <div class="error" *ngIf="venueForm.get('address')?.hasError('required') && venueForm.get('address')?.touched">Address is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="capacity">Capacity:</label>
+    <input type="number" id="capacity" formControlName="capacity">
+    <div class="error" *ngIf="venueForm.get('capacity')?.hasError('min') && venueForm.get('capacity')?.touched">Capacity cannot be negative.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div class="error" *ngIf="venueForm.get('description')?.hasError('required') && venueForm.get('description')?.touched">Description is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="website">Website:</label>
+    <input type="text" id="website" formControlName="website">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" formControlName="phone">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" id="email" formControlName="email">
+  </div>
+
+  <button type="submit" class="submit-button" [disabled]="venueForm.invalid">Submit</button>
+</form>

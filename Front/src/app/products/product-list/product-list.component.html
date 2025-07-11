@@ -1,0 +1,46 @@
+<!-- product-list.component.html -->
+
+<div>
+    <h2>Product List</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Weight</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Units</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Photo</th>
+          <th>Action</th> <!-- Added Action column for the Edit and Delete buttons -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>
+            <!-- Link to the product details page -->
+            <a [routerLink]="['/back/products', product.id]">{{ product.productName }}</a>
+          </td>
+          <td>{{ product.weight }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.units }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.address }}</td>
+          <td>{{ product.photo }}</td>
+          <td>
+            <!-- Edit button with routerLink to the update page -->
+            <a [routerLink]="['/back/products', product.id, 'update']">Edit</a>
+            
+            <!-- Delete button with click event to trigger the deleteProduct method -->
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

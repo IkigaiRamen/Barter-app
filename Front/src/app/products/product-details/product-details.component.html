@@ -1,0 +1,19 @@
+<!-- product-details.component.html -->
+
+<div *ngIf="product">
+    <h2>Product Details</h2>
+    <p><strong>Product Name:</strong> {{ product.productName }}</p>
+    <p><strong>Weight:</strong> {{ product.weight }}</p>
+    <p><strong>Category:</strong> {{ product.category }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
+    <p><strong>Units:</strong> {{ product.units }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Address:</strong> {{ product.address }}</p>
+    <p><strong>Photo:</strong> {{ product.photo }}</p>
+  
+    <!-- You can add more fields as needed -->
+  
+    <!-- Add navigation link to update the product -->
+    <a [routerLink]="['/products', product.id, 'update']">Update Product</a>
+  </div>
+  
